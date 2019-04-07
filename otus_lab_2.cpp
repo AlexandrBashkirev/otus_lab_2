@@ -1,6 +1,7 @@
 // otus_lab_2.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include <cassert>
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -10,7 +11,8 @@
 #include <fstream>
 #include <sstream>
 
-#include "ip_worker.h"
+
+using IP = std::vector<unsigned char>;
 
 std::vector<std::string> split(const std::string &str, char d)
 {
