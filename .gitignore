@@ -1,0 +1,12 @@
+x64/
+.vs/
+version.h
+test_version/
+Release/
+version/
+Debug/
+ip_worker_lib/
+otus_lab_2/
+tests/
+version_lib/
+otus_lab_2.sln
