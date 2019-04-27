@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cassert>
 
 std::vector<std::string> split(const std::string &str, char d)
 {
@@ -25,12 +26,11 @@ std::vector<std::string> split(const std::string &str, char d)
 template<typename _InIt, typename Pr, typename Func, typename... Args>
 void predicated_for_each(_InIt first, _InIt last, Func func, Pr pr)
 {
-	_Adl_verify_range(first, last);
-	auto _first = _Get_unwrapped(first);
-	const auto _last = _Get_unwrapped(last);
-	for (; _first != _last; ++_first)
+	assert(last > first);
+
+	for (; first != last; ++first)
 	{
-		if (pr(*_first))
-			func(*_first);
+		if (pr(*first))
+			func(*first);
 	}
 }
